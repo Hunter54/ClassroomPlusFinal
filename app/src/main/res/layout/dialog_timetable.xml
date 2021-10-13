@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?><!--suppress AndroidUnknownAttribute -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ionutv.classroomplus.viewmodels.TimeTableDialogViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/horizontal_line"
+                    android:layout_width="70dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#c0c0c0" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/day_choice_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:checkedDayConverter="@{viewModel.currentSelectedClassDay}"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/day_choice_chip1"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+
+                        android:text="Monday" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/day_choice_chip2"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="Tuesday" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/day_choice_chip3"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="Wednesday" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/day_choice_chip4"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="Thursday" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/day_choice_chip5"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="Friday" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/class_choice_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:checkedTypeConverter="@{viewModel.currentSelectedClassType}"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/choice_chip1"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Course" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/choice_chip2"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Laboratory/Seminar" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/week_choice_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    app:checkedWeekConverter="@{viewModel.currentClassWeek}"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/week_choice_chip1"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Odd week" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/week_choice_chip2"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Even week" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/week_choice_chip3"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:text="Both weeks" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#c0c0c0"
+                    android:padding="10dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/name_input_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:boxBackgroundColor="@android:color/transparent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/auto_complete_name_text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:afterTextChanged="@{(editable) -> viewModel.onCurrentClassNameChanged(editable)}"
+                        android:completionThreshold="1"
+                        android:hint="@string/class_name_hint"
+                        android:inputType="textCapWords"
+                        android:lines="1"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:text="@{viewModel.currentClassName}"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="5dp"
+                        android:text="Room:"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/room_text_input"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:afterTextChanged="@{(editable) -> viewModel.onCurrentRoomNameChanged(editable)}"
+                        android:hint="A03"
+                        android:inputType="textCapWords"
+                        android:lines="1"
+                        android:maxLength="4"
+                        android:maxLines="1"
+                        android:text="@{viewModel.currentRoomName}" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Time:"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/time_text_input"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:afterTextChanged="@{(editable) -> viewModel.onCurrentTimeChanged(editable)}"
+                        android:hint="10:20"
+                        android:inputType="time"
+                        android:maxLength="5"
+                        android:text="@{viewModel.currentTime}" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teacher_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@android:color/transparent"
+                    app:boxBackgroundColor="@android:color/transparent">
+
+                    <EditText
+                        android:id="@+id/teacher_text_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:afterTextChanged="@{(editable) -> viewModel.onCurrentTeacherNameChanged(editable)}"
+                        android:hint="Teacher name"
+                        android:inputType="textCapWords"
+                        android:lines="1"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:text="@{viewModel.currentTeacherName}"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/cancel_button"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_toStartOf="@+id/button_layout"
+                        android:onClick="@{() -> viewModel.onCancelClicked()}"
+                        android:text="@string/dialog_button_cancel"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/save_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/save_button"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{viewModel.selectedId == 0 ? @string/dialog_button_save : @string/dialog_button_update }"
+                        app:cornerRadius="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cancel_button"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="SAVE" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/back_up_timetable"
+        android:title="@string/timetable_menu_back_up"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/restore_timetable"
+        android:title="@string/timetable_menu_restore"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/refresh_classroom"
+        android:title="@string/menu_refresh"
+        app:showAsAction="never"/>
+</menu>

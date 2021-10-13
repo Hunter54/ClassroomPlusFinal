@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@id/classesFragment"
+            android:title="Timetable" />
+        <item
+            android:id="@id/attendanceFragment"
+            android:title="Attendance" />
+        <item
+            android:id="@+id/manageAttendancesFragment"
+            android:title="Manage Attendances"/>
+        <item
+            android:id="@+id/accountFragment"
+            android:title="Account" />
+    </group>
+
+</menu>

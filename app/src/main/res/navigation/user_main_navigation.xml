@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_main_navigation"
+    app:startDestination="@id/classesFragment">
+
+    <fragment
+        android:id="@+id/classesFragment"
+        android:name="com.ionutv.classroomplus.fragments.ClassesFragment"
+        android:label="Timetable" />
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.ionutv.classroomplus.fragments.AttendanceFragment"
+        android:label="Attendance" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.ionutv.classroomplus.fragments.AccountFragment"
+        android:label="Account" />
+    <fragment
+        android:id="@+id/manageAttendancesFragment"
+        android:name="com.ionutv.classroomplus.fragments.ManageAttendancesFragment"
+        android:label="ManageAttendances">
+        <action
+            android:id="@+id/action_manageAttendancesFragment_to_classAttendancesOverviewFragment"
+            app:destination="@id/classAttendanceGraph"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <navigation android:id="@+id/classAttendanceGraph"
+        app:startDestination="@id/selectedClassAttendancesOverviewFragment">
+        <argument
+            android:name="classroomId"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="classroomName"
+            app:argType="string"
+            app:nullable="false" />
+        <fragment
+            android:id="@+id/selectedClassAttendancesOverviewFragment"
+            android:name="com.ionutv.classroomplus.fragments.SelectedClassAttendancesOverviewFragment"
+            android:label="ClassAttendancesOverview">
+            <argument
+                android:name="classroomId"
+                app:argType="string"
+                app:nullable="false" />
+            <argument
+                android:name="classroomName"
+                app:argType="string"
+                app:nullable="false" />
+            <action
+                android:id="@+id/action_selectedClassAttendancesOverviewFragment_to_individualClassAttendanceFragment"
+                app:destination="@id/IndividualTimeStampAttendanceFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+                app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        </fragment>
+        <fragment
+            android:id="@+id/IndividualTimeStampAttendanceFragment"
+            android:name="com.ionutv.classroomplus.fragments.IndividualTimeStampAttendanceFragment"
+            android:label="IndividualClassAttendance">
+            <argument
+                android:name="attendanceTimeStamp"
+                app:argType="string" />
+        </fragment>
+    </navigation>
+</navigation>

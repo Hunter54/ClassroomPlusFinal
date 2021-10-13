@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="course_blue">#31a4f3</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="red">#a601ff</color>
+    <color name="light_grey">#ad01ff</color>
+    <color name="blue_variant">#FF1976D2</color>
+    <color name="blue_light">#FFBBDEFB</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#121212</color>
+</resources>

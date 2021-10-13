@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ionutv.classroomplus.viewmodels.SelectedTimeTableDialogViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_edit"
+            style="@style/BottomSheetItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_edit_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableStart="@drawable/ic_baseline_edit_24"
+            android:onClick="@{() -> viewModel.onEdit()}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BottomSheetItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_delete_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_edit"
+            android:drawableStart="@drawable/ic_baseline_delete_forever_24"
+            android:onClick="@{() -> viewModel.onDelete()}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
